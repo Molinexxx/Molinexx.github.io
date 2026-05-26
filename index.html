@@ -8,6 +8,11 @@
     name="description"
     content="Portfolio de Kaua Molina, desenvolvedor com foco em Java, PHP e projetos web."
   >
+  <meta name="theme-color" content="#050816">
+  <meta property="og:title" content="Kaua Molina | Portfolio Dev">
+  <meta property="og:description" content="Projetos reais, evolucao tecnica e repositorios do GitHub apresentados em uma interface premium.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/kaua-molina.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -17,10 +22,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#conteudo-principal">Pular para o conteudo</a>
   <div class="page-shell">
     <header class="hero">
       <nav class="topbar">
-        <span class="brand">KAUA MOLINA</span>
+        <a class="brand" href="#topo">KAUA MOLINA</a>
         <div class="topbar-links">
           <a href="#projetos">Projetos</a>
           <a href="#habilidades">Habilidades</a>
@@ -31,12 +37,20 @@
 
       <section class="hero-content">
         <div class="hero-copy">
-          <p class="eyebrow">DESENVOLVEDOR JAVA E PHP</p>
-          <h1>Backend, CRUDs e projetos web construidos com codigo, pratica e evolucao continua.</h1>
+          <p class="eyebrow">DESENVOLVEDOR BACKEND EM FORMACAO</p>
+          <h1>Construo sistemas web com Java, PHP e banco de dados, transformando estudo em projetos reais.</h1>
           <p class="hero-text">
-            Sou Kaua Molina e este portfolio reune meus repositorios publicos com foco em
-            backend, sistemas web, organizacao de codigo e pratica constante com Java, PHP e banco de dados.
+            Sou Kaua Molina. Este portfolio apresenta repositorios publicados no GitHub com foco em
+            CRUDs, logica de negocio, organizacao de codigo, integracao com banco de dados e evolucao pratica
+            no desenvolvimento web.
           </p>
+          <div class="hero-badges" aria-label="Principais competencias">
+            <span>Java</span>
+            <span>PHP</span>
+            <span>MySQL</span>
+            <span>CRUD</span>
+            <span>Sistemas web</span>
+          </div>
           <div class="hero-code-card" aria-label="Resumo tecnico">
             <div class="hero-code-top">
               <span></span>
@@ -46,13 +60,14 @@
             <pre class="hero-code-block"><code>const developer = {
   nome: "Kaua Molina",
   foco: ["Java", "PHP", "MySQL"],
-  especialidade: "CRUD e backend",
-  status: "em evolucao constante"
+  especialidade: "CRUD e backend, desenvolvimento web",
+  objetivo: "evoluir em backend e sistemas web"
 };</code></pre>
           </div>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projetos">Ver projetos</a>
-            <a class="button button-secondary" href="https://github.com/Molinexxx" target="_blank" rel="noreferrer">GitHub</a>
+          <div class="hero-actions" id="topo">
+            <a class="button button-primary" href="#projetos">Ver projetos em destaque</a>
+            <a class="button button-secondary" href="#contato">Falar comigo</a>
+            <a class="button button-secondary" href="https://github.com/Molinexxx" target="_blank" rel="noreferrer" aria-label="Abrir perfil do GitHub de Kaua Molina">GitHub</a>
           </div>
         </div>
 
@@ -60,22 +75,23 @@
           <div class="profile-photo">
             <img src="assets/kaua-molina.jpeg" alt="Foto de Kaua Molina">
           </div>
-          <p class="panel-label">Stack principal</p>
+          <p class="panel-label">Resumo profissional</p>
+          <h2 class="hero-panel-title">Projetos reais, aprendizado constante e foco em oportunidades junior.</h2>
           <ul class="stack-list">
-            <li>Java para logica, CRUDs e projetos academicos</li>
-            <li>PHP com banco de dados e estrutura organizada</li>
-            <li>HTML, CSS e JavaScript para interfaces web</li>
-            <li>GitHub como vitrine de evolucao e repertorio tecnico</li>
+            <li>Java para logica, CRUDs, fundamentos backend e projetos academicos</li>
+            <li>PHP com banco de dados, autenticacao e estrutura organizada</li>
+            <li>HTML, CSS e JavaScript para interfaces web claras e responsivas</li>
+            <li>GitHub como historico real da minha evolucao tecnica</li>
           </ul>
           <div class="panel-highlight">
             <span id="repo-count">--</span>
-            <p>repositorios publicos monitorados diretamente do meu GitHub.</p>
+            <p>repositorios publicos exibidos como prova pratica do que venho construindo.</p>
           </div>
         </aside>
       </section>
     </header>
 
-    <main>
+    <main id="conteudo-principal">
       <section class="section section-intro" id="sobre">
         <div class="section-heading">
           <p class="section-tag">Sobre</p>
@@ -154,20 +170,29 @@
         <div class="section-heading section-heading-inline">
           <div>
             <p class="section-tag">Projetos</p>
-            <h2>Repositorios em destaque</h2>
+            <h2>Projetos em destaque</h2>
           </div>
           <p class="section-caption">
-            Cards atualizados a partir do GitHub e preparados para receber imagens personalizadas de cada projeto.
+            Os projetos principais aparecem primeiro, mas a secao tambem passa a incluir os demais repositorios publicos do meu GitHub.
           </p>
         </div>
         <div class="projects-intro">
           <p>
-            Os projetos abaixo sao carregados com base nos repositorios publicos mais recentes.
-            Se eu adicionar uma imagem local para algum repositorio, ela aparece no card automaticamente;
-            se nao houver imagem local, o portfolio usa a capa gerada pelo proprio GitHub.
+            A vitrine abaixo prioriza os repositórios mais relevantes do meu GitHub. Os tres primeiros aparecem como
+            estudos de caso principais, enquanto os demais repositorios publicados entram automaticamente na grade secundaria.
           </p>
         </div>
-
+        <div class="projects-toolbar">
+          <div class="projects-status" id="projects-status" aria-live="polite"></div>
+          <button class="projects-refresh-button" id="projects-refresh-button" type="button">
+            Atualizar projetos
+          </button>
+        </div>
+        <div class="projects-featured-grid" id="projects-featured-grid" aria-live="polite"></div>
+        <div class="projects-subheading">
+          <p class="section-tag">Mais projetos</p>
+          <p>Todos os outros repositorios publicos elegiveis aparecem aqui para ampliar a visao do meu repertorio tecnico.</p>
+        </div>
         <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
       </section>
 
@@ -180,13 +205,28 @@
             e funciona como base para apresentar meus trabalhos e minha evolucao.
           </p>
           <div class="contact-links">
-            <a href="https://github.com/Molinexxx" target="_blank" rel="noreferrer">github.com/Molinexxx</a>
-            <a href="https://www.linkedin.com/in/kaua-molina-518570314/" target="_blank" rel="noreferrer">linkedin.com/in/kaua-molina-518570314</a>
+            <a href="https://github.com/Molinexxx" target="_blank" rel="noreferrer" aria-label="Abrir perfil do GitHub de Kaua Molina">github.com/Molinexxx</a>
+            <a href="https://www.linkedin.com/in/kaua-molina-518570314/" target="_blank" rel="noreferrer" aria-label="Abrir perfil do LinkedIn de Kaua Molina">linkedin.com/in/kaua-molina-518570314</a>
             <a href="#projetos">Ver meus projetos</a>
           </div>
         </div>
       </section>
     </main>
+  </div>
+
+  <div class="image-lightbox" id="image-lightbox" hidden aria-hidden="true">
+    <div class="image-lightbox-backdrop" data-lightbox-close></div>
+    <div class="image-lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="image-lightbox-title">
+      <div class="image-lightbox-topbar">
+        <p id="image-lightbox-title">Visualizacao da imagem do projeto</p>
+        <button class="image-lightbox-close" id="image-lightbox-close" type="button" aria-label="Fechar imagem ampliada">
+          Fechar
+        </button>
+      </div>
+      <div class="image-lightbox-media">
+        <img id="image-lightbox-image" alt="">
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>

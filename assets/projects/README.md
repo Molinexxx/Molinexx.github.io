@@ -12,6 +12,7 @@ Use o mesmo nome do repositorio:
 
 ## Formatos aceitos
 
+- `.svg`
 - `.png`
 - `.jpg`
 - `.jpeg`
